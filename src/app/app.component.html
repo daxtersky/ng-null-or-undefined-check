@@ -1,9 +1,11 @@
-<span>varNull</span>
-<div *ngIf="varNull === undefined">{{ varNull }} undefined</div>
-<div *ngIf="varNull === null">{{ varNull }} null</div>
-<div *ngIf="varNull">{{varNull}}</div>
+<h3>DISTINGUISH 3 STATES OF A VARIABLE INCLUDING UNDEFINED AND SEPARATELY NULL</h3>
+<strong>willNotReceiveData</strong>
+<span *ngIf="willNotReceiveData === undefined">{{ willNotReceiveData }} undefined</span>
+<span *ngIf="willNotReceiveData === null">{{ willNotReceiveData }} null</span>
+<span *ngIf="willNotReceiveData">{{ willNotReceiveData}}</span>
 <br>
-<span>varDefined</span>
-<div *ngIf="varDefined === undefined">{{ varDefined }} undefined</div>
-<div *ngIf="varDefined === null">{{ varDefined }} null</div>
-<div *ngIf="varDefined">{{varDefined}}</div>
+<br>
+<strong>willReceiveData</strong>
+<span *ngIf="willReceiveData === undefined">{{ willReceiveData }} undefined</span>
+<span *ngIf="willReceiveData === null">{{ willReceiveData }} null</span>
+<span *ngIf="willReceiveData"> {{ willReceiveData }}</span>

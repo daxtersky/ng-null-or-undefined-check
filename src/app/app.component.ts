@@ -8,38 +8,38 @@ import { Component, VERSION, OnInit } from '@angular/core';
 export class AppComponent implements OnInit  {
   name = 'Angular ' + VERSION.major;
 
-  // TODO:
-// DISTINGUISH 3 STATES OF A VARIABLE WITH UNDEFINED AND NULL
+  // TODO: DISTINGUISH 3 STATES OF A VARIABLE WITH UNDEFINED AND NULL
 
-  varNull;
-  varDefined;
+  willNotReceiveData;
+  willReceiveData;
 
   ngOnInit() {
-    console.log('varNull init', this.varNull);
-    console.log('varDefined init', this.varDefined);
-
+    console.log('willNotReceiveData init', this.willNotReceiveData);
+    console.log('willReceiveData init', this.willReceiveData);
 
     setTimeout(() => {
     
       // WE RECEIVE (OR NOT) DATA FROM BACKEND
+      const backendNoData = [];
+      const backendData = [3,54,99];
       console.log('--- a call to backend ---')
-      this.varNull = [];
-      this.varDefined = [3,54,99];
+      this.willNotReceiveData = backendNoData;
+      this.willReceiveData = backendData;
 
-      if (this.varNull.length === 0) {
-        this.varNull = null;
-        console.log('varNull', this.varNull);
+      if (backendNoData.length === 0) {
+        this.willNotReceiveData = null;
+        console.log('willNotReceiveData', this.willNotReceiveData);
       } else {
-        this.varNull = this.varNull[this.varNull.length - 1];
-        console.log('varNull', this.varNull);
+        this.willNotReceiveData = backendNoData[backendNoData.length - 1];
+        console.log('willNotReceiveData', this.willNotReceiveData);
       }
 
-      if (this.varDefined.length === 0) {
-        this.varDefined = null;
-        console.log('varDefined', this.varDefined);
+      if (backendData.length === 0) {
+        this.willReceiveData = backendData;
+        console.log('willReceiveData', this.willReceiveData);
       } else {
-        this.varDefined = this.varDefined[this.varDefined.length - 1];
-        console.log('varDefined', this.varDefined);
+        this.willReceiveData = backendData[backendData.length - 1];
+        console.log('willReceiveData', this.willReceiveData);
       }
     }, 900);
 
